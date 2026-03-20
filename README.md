@@ -1,6 +1,6 @@
 # API de Pagamentos
 
-Solução para o desafio técnico. O objetivo foi criar uma API REST simples para receber pagamentos e gerenciar a mudança de status, sem muita complexiddae.
+Solução para o desafio técnico. O objetivo foi criar uma API REST simples para receber pagamentos e gerenciar a mudança de status, sem muita complexidade.
 
 ## Stack utilizada:
 * Java 17 | Spring Boot 4.x
@@ -11,7 +11,7 @@ Solução para o desafio técnico. O objetivo foi criar uma API REST simples par
 3. Suba a aplicação: `mvn spring-boot:run`
 
 * **API:** `http://localhost:8080`
-* **Banco H2:** `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:pagamentosdb`, usuaário: `sa`, sem senha)
+* **Banco H2:** `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:pagamentosdb`, usuário: `sa`, sem senha)
 
 ## Endpoints
 * `POST /api/pagamentos` - Cadastra um pagamento (Status: PENDENTE_PROCESSAMENTO).
