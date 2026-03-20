@@ -513,6 +513,63 @@
           ],
           "cookie": [],
           "body": "{\n    \"erro\": \"Número do cartão é obrigatório para este método de pagamento.\"\n}"
+        },
+        {
+          "name": "Erro (Campos ausentes)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"numeroCartao\": \"1234-5678-9012-3456\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 18:50:11 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"valor\": \"O valor é obrigatório.\",\n    \"cpfCnpj\": \"O CPF/CNPJ é obrigatório.\",\n    \"tipoPagamento\": \"O tipo de pagamento é obrigatório.\",\n    \"codigoDebito\": \"O código do débito é obrigatório.\"\n}"
         }
       ]
     },
