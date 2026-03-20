@@ -1,0 +1,889 @@
+{
+  "info": {
+    "_postman_id": "c20b5dd8-53a6-47e1-a404-ad64f40d02f4",
+    "name": "DESAFIO_API_PAGAMENTOS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17493396"
+  },
+  "item": [
+    {
+      "name": "Listar pagamentos - ativos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/pagamentos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pagamentos"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Listar pagamentos - ativos",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 01:51:56 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"ativo\": true,\n        \"codigoDebito\": 1001,\n        \"cpfCnpj\": \"12345678901\",\n        \"id\": 2,\n        \"numeroCartao\": \"1234-5678-9012-3456\",\n        \"status\": \"PENDENTE_PROCESSAMENTO\",\n        \"tipoPagamento\": \"CARTAO_CREDITO\",\n        \"valor\": 150.5\n    },\n    {\n        \"ativo\": true,\n        \"codigoDebito\": 1002,\n        \"cpfCnpj\": \"98765432100\",\n        \"id\": 3,\n        \"numeroCartao\": null,\n        \"status\": \"PENDENTE_PROCESSAMENTO\",\n        \"tipoPagamento\": \"PIX\",\n        \"valor\": 300\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Filtrar por débito",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/pagamentos?codigoDebito=1001",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pagamentos"
+          ],
+          "query": [
+            {
+              "key": "codigoDebito",
+              "value": "1001"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Filtrar por débito",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos?codigoDebito=1001",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos"
+              ],
+              "query": [
+                {
+                  "key": "codigoDebito",
+                  "value": "1001"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 01:52:02 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"ativo\": true,\n        \"codigoDebito\": 1001,\n        \"cpfCnpj\": \"12345678901\",\n        \"id\": 2,\n        \"numeroCartao\": \"1234-5678-9012-3456\",\n        \"status\": \"PENDENTE_PROCESSAMENTO\",\n        \"tipoPagamento\": \"CARTAO_CREDITO\",\n        \"valor\": 150.5\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Filtrar pro documento (cpf, cnpj)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/pagamentos?cpfCnpj=12345678901",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pagamentos"
+          ],
+          "query": [
+            {
+              "key": "cpfCnpj",
+              "value": "12345678901"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Filtrar pro documento (cpf, cnpj)",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos?cpfCnpj=12345678901",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos"
+              ],
+              "query": [
+                {
+                  "key": "cpfCnpj",
+                  "value": "12345678901"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 01:52:08 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"ativo\": true,\n        \"codigoDebito\": 1001,\n        \"cpfCnpj\": \"12345678901\",\n        \"id\": 2,\n        \"numeroCartao\": \"1234-5678-9012-3456\",\n        \"status\": \"PENDENTE_PROCESSAMENTO\",\n        \"tipoPagamento\": \"CARTAO_CREDITO\",\n        \"valor\": 150.5\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Filtrar por status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/pagamentos?status=PENDENTE_PROCESSAMENTO",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pagamentos"
+          ],
+          "query": [
+            {
+              "key": "status",
+              "value": "PENDENTE_PROCESSAMENTO"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Pendente processamento",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos?status=PENDENTE_PROCESSAMENTO",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "PENDENTE_PROCESSAMENTO"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 01:52:15 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"ativo\": true,\n        \"codigoDebito\": 1001,\n        \"cpfCnpj\": \"12345678901\",\n        \"id\": 2,\n        \"numeroCartao\": \"1234-5678-9012-3456\",\n        \"status\": \"PENDENTE_PROCESSAMENTO\",\n        \"tipoPagamento\": \"CARTAO_CREDITO\",\n        \"valor\": 150.5\n    },\n    {\n        \"ativo\": true,\n        \"codigoDebito\": 1002,\n        \"cpfCnpj\": \"98765432100\",\n        \"id\": 3,\n        \"numeroCartao\": null,\n        \"status\": \"PENDENTE_PROCESSAMENTO\",\n        \"tipoPagamento\": \"PIX\",\n        \"valor\": 300\n    }\n]"
+        },
+        {
+          "name": "Processado com sucesso",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos?status=PROCESSADO_COM_SUCESSO",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "PROCESSADO_COM_SUCESSO"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 18:10:42 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 2,\n        \"codigoDebito\": 1002,\n        \"cpfCnpj\": \"98765432100\",\n        \"tipoPagamento\": \"PIX\",\n        \"numeroCartao\": null,\n        \"valor\": 300,\n        \"status\": \"PROCESSADO_COM_SUCESSO\",\n        \"ativo\": true\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Receber pagamentos - cartão",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"codigoDebito\": 1002,\n  \"cpfCnpj\": \"12345678901\",\n  \"tipoPagamento\": \"CARTAO_CREDITO\",\n  \"numeroCartao\": \"1234-5678-9012-3456\",\n  \"valor\": 300.00\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/pagamentos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pagamentos"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Sucesso",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigoDebito\": 1001,\n  \"cpfCnpj\": \"12345678901\",\n  \"tipoPagamento\": \"CARTAO_CREDITO\",\n  \"numeroCartao\": \"1234-5678-9012-3456\",\n  \"valor\": 150.50\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 01:51:42 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"ativo\": true,\n    \"codigoDebito\": 1001,\n    \"cpfCnpj\": \"12345678901\",\n    \"id\": 2,\n    \"numeroCartao\": \"1234-5678-9012-3456\",\n    \"status\": \"PENDENTE_PROCESSAMENTO\",\n    \"tipoPagamento\": \"CARTAO_CREDITO\",\n    \"valor\": 150.5\n}"
+        },
+        {
+          "name": "Erro (número de cartão)",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigoDebito\": 1002,\n  \"cpfCnpj\": \"12345678901\",\n  \"tipoPagamento\": \"CARTAO_CREDITO\",\n  \"valor\": 300.00\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 02:09:57 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"erro\": \"Número do cartão é obrigatório para este método de pagamento.\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Receber pagamentos - pix",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"codigoDebito\": 1002,\n  \"cpfCnpj\": \"98765432100\",\n  \"tipoPagamento\": \"PIX\",\n  \"valor\": 300.00\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/pagamentos",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pagamentos"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Sucesso",
+          "originalRequest": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"codigoDebito\": 1002,\n  \"cpfCnpj\": \"98765432100\",\n  \"tipoPagamento\": \"PIX\",\n  \"valor\": 300.00\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 01:51:50 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"ativo\": true,\n    \"codigoDebito\": 1002,\n    \"cpfCnpj\": \"98765432100\",\n    \"id\": 3,\n    \"numeroCartao\": null,\n    \"status\": \"PENDENTE_PROCESSAMENTO\",\n    \"tipoPagamento\": \"PIX\",\n    \"valor\": 300\n}"
+        }
+      ]
+    },
+    {
+      "name": "Atualizar status pagamento",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"PROCESSADO_COM_SUCESSO\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/pagamentos/{id}/status",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pagamentos",
+            "{id}",
+            "status"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Sucesso",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"PROCESSADO_COM_SUCESSO\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos/2/status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos",
+                "2",
+                "status"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 01:52:52 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"ativo\": true,\n    \"codigoDebito\": 1001,\n    \"cpfCnpj\": \"12345678901\",\n    \"id\": 2,\n    \"numeroCartao\": \"1234-5678-9012-3456\",\n    \"status\": \"PROCESSADO_COM_SUCESSO\",\n    \"tipoPagamento\": \"CARTAO_CREDITO\",\n    \"valor\": 150.5\n}"
+        },
+        {
+          "name": "Erro",
+          "originalRequest": {
+            "method": "PATCH",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"PROCESSADO_COM_FALHA\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos/2/status",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos",
+                "2",
+                "status"
+              ]
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 01:53:16 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"erro\": \"Pagamentos processados com sucesso não podem ter o status alterado.\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Deletar pagamento",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/pagamentos/4",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "pagamentos",
+            "4"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Sucesso",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos",
+                "4"
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 01:58:25 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "Erro",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/pagamentos/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "pagamentos",
+                "2"
+              ]
+            }
+          },
+          "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+          "code": 422,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Fri, 20 Mar 2026 18:07:21 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"erro\": \"Apenas pagamentos com status Pendente de Processamento podem ser excluídos.\"\n}"
+        }
+      ]
+    }
+  ]
+}
