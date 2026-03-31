@@ -1,6 +1,6 @@
 package br.com.fadesp.pagamentos.model.dto;
 
-import br.com.fadesp.pagamentos.model.StatusPagamento;
+import br.com.fadesp.pagamentos.model.enums.StatusPagamento;
 import jakarta.validation.constraints.NotNull;
 
 public record AtualizaStatusDTO(

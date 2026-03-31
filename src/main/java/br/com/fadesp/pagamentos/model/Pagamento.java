@@ -1,5 +1,7 @@
 package br.com.fadesp.pagamentos.model;
 
+import br.com.fadesp.pagamentos.model.enums.StatusPagamento;
+import br.com.fadesp.pagamentos.model.enums.TipoPagamento;
 import jakarta.persistence.*;
 import lombok.*;
 

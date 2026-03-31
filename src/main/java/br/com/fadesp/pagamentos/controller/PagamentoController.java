@@ -1,7 +1,7 @@
 package br.com.fadesp.pagamentos.controller;
 
 import br.com.fadesp.pagamentos.model.Pagamento;
-import br.com.fadesp.pagamentos.model.StatusPagamento;
+import br.com.fadesp.pagamentos.model.enums.StatusPagamento;
 import br.com.fadesp.pagamentos.model.dto.AtualizaStatusDTO;
 import br.com.fadesp.pagamentos.model.dto.PagamentoRequestDTO;
 import br.com.fadesp.pagamentos.service.PagamentoService;

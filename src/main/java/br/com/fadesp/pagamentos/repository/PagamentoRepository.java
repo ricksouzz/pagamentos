@@ -1,7 +1,7 @@
 package br.com.fadesp.pagamentos.repository;
 
 import br.com.fadesp.pagamentos.model.Pagamento;
-import br.com.fadesp.pagamentos.model.StatusPagamento;
+import br.com.fadesp.pagamentos.model.enums.StatusPagamento;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

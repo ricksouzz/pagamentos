@@ -1,8 +1,8 @@
 package br.com.fadesp.pagamentos.service;
 
 import br.com.fadesp.pagamentos.model.Pagamento;
-import br.com.fadesp.pagamentos.model.StatusPagamento;
-import br.com.fadesp.pagamentos.model.TipoPagamento;
+import br.com.fadesp.pagamentos.model.enums.StatusPagamento;
+import br.com.fadesp.pagamentos.model.enums.TipoPagamento;
 import br.com.fadesp.pagamentos.model.dto.PagamentoRequestDTO;
 import br.com.fadesp.pagamentos.repository.PagamentoRepository;
 import lombok.RequiredArgsConstructor;

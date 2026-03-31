@@ -1,4 +1,4 @@
-package br.com.fadesp.pagamentos.model;
+package br.com.fadesp.pagamentos.model.enums;
 
 public enum StatusPagamento {
     PENDENTE_PROCESSAMENTO,
